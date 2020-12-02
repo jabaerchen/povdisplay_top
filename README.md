@@ -1,4 +1,4 @@
-# think on resistant -> povdisplay_top
+sifrai# think on resistant -> povdisplay_top
 ## esp12 F Overview
 https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
 ## Bootmodes
@@ -27,3 +27,22 @@ From the end of this document. http://esp8266.ru/esp8266-pin-register-strapping/
 2 Jump Boot
 1 UART Boot
 0 Remapping
+
+
+
+## Calculating of LED rate
+
+Bitrate 800 kHz
+
+800 k /24 ->33.3k
+
+33,3k / 64 -> 520 Zeilen pro s
+
+520/ 32 -> 16 Hz updaterate
+
+-> 64 x 64 @ 16,3 Hz
+
+## □  q.e.d :)
+
+
+

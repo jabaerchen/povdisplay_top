@@ -31,4 +31,6 @@
 *.out
 *.app
 
-Release/Test.bin
+*.ino.cpp
+
+Release/*
