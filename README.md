@@ -45,4 +45,52 @@ Bitrate 800 kHz
 ## □  q.e.d :)
 
 
+64 LEDs x 32 Positions
 
+
+Anzahl der Positionen * Rotationsf * AnzahlFarben * 2^(Farbtiefe) * BreiteDesSR = Datentaktfrequenz
+32 * 24 Hz * 3 * 2^(4) * 16 = 589.824 kHz
+32 * 5 Hz * 3 * 2^(4) * 16 = 1.228800 MHz
+
+Welche Pins Brauchen wir?
+ - Motor PWM
+ - Motor sensor
+ - 4 * DataAnode in SR
+ - 3 * RGB Kathode und SDK SR (2 mit Dekoder)
+   - 00 : R
+   - 01 : G
+   - 10 : B
+   - 11 : RCK SR
+ - CLK SR
+
+![image](https://user-images.githubusercontent.com/67058718/130693555-f13dcc01-4277-45be-98ea-02239eeb6b89.png)
+- RST
+- ADC0
+- Enable
+- GPIO16 CLK (**no Interrupt**)
+- GPIO14 Anode2 
+- GPIO12 Anode0 
+- GPIO13 Anode1 
+- VCC
+- ....
+- ....
+- ....
+- ....
+- ....
+- ....
+- GND
+- GPIO15 Anode3 (**pulled**)
+- GPIO02 Decoder0 (**pulled**)
+- GPIO00 Decoder1 (**pulled**)
+- GPIO04 Motor PWM
+- GPIO05 Motor Sensor
+- GPIO03 (**RX**)
+- GPIO01 (**TX**)
+
+Connector to RingOfFire:
+ - 4 * DataAnode in SR
+ - 3 * RGB Kathode und SDK SR (2 mit Dekoder)
+ - CLK SR
+ - VCC
+ - GND
+=> 9
